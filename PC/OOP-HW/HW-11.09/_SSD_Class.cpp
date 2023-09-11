@@ -32,44 +32,60 @@ SSD::SSD(const char *inputSSDName, int inputSSDMemory, double inputSSDUpSpeed, d
 
 void SSD::setSSDName(const char *inputSSDName)
 {
+    if (this->SSDName != nullptr) {
+
+        delete[] this->SSDName;
+        this->SSDName = nullptr;
+    }
+
+    this->SSDName = new char[strlen(inputSSDName) + 1];
+    strcpy(this->SSDName, inputSSDName);
 }
 
 void SSD::setSSDMemory(int inputSSDMemory)
 {
+    this->memory = inputSSDMemory;
 }
 
 void SSD::setSSDUpSpeed(double inputSSDUpSpeed)
 {
+    this->uploadSpeed = inputSSDUpSpeed;
 }
 
 void SSD::setSSDDownSpeed(double inputSSDDownSpeed)
 {
+    this->downloadSpeed = inputSSDDownSpeed;
 }
 
 void SSD::printSSDSpecs()
 {
+    std::cout << "Name: " << this->SSDName << std::endl
+        << "Memory: " << this->memory << std::endl
+        << "Upload Speed: " << this->uploadSpeed << std::endl
+        << "Download Speed: " << this->downloadSpeed << std::endl;
 }
 
 char *SSD::getSSDName()
 {
-    return nullptr;
+    return this->SSDName;
 }
 
 int SSD::getSSDMemory()
 {
-    return 0;
+    return this->memory;
 }
 
 double SSD::getSSDUpSpeed()
 {
-    return 0.0;
+    return this->uploadSpeed;
 }
 
 double SSD::getSSDDownSpeed()
 {
-    return 0.0;
+    return this->downloadSpeed;
 }
 
 SSD::~SSD()
 {
+    delete[] this->SSDName;
 }
