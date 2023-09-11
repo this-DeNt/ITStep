@@ -1,54 +1,108 @@
 #include "_CPU_Class.h"
+#include "_Framework.h"
 
-CPU::CPU(const char *inputCPUName)
+CPU::CPU() {
+
+    this->CPUName = nullptr;
+    this->price = 0.0;
+    this->processors = 0;
+    this->threads = 0;
+    this->GHz = 0.0;
+}
+
+CPU::CPU(const char *inputCPUName):CPU()
 {
+    this->CPUName = new char[strlen(inputCPUName) + 1];
+    strcpy(this->CPUName, inputCPUName);
+}
+
+CPU::CPU(const char* inputCPUName, double inputCPUPrice):CPU(inputCPUName) {
+
+    this->price = inputCPUPrice;
+}
+
+CPU::CPU(const char* inputCPUName, double inputCPUPrice, int inputCPUProcessors):CPU(inputCPUName, inputCPUPrice) {
+
+    this->processors = inputCPUProcessors;
+}
+
+CPU::CPU(const char* inputCPUName, double inputCPUPrice, int inputCPUProcessors, int inputCPUThreads):CPU(inputCPUName, inputCPUPrice, inputCPUProcessors) {
+
+    this->threads = inputCPUThreads;
+}
+
+CPU::CPU(const char* inputCPUName, double inputCPUPrice, int inputCPUProcessors, int inputCPUThreads, double inputCPUGHz):CPU(inputCPUName, inputCPUPrice, inputCPUProcessors, inputCPUThreads) {
+
+    this->GHz = inputCPUGHz;
 }
 
 void CPU::setCPUName(const char *inputCPUName)
 {
+    if (this->CPUName != nullptr) {
+
+        delete[] this->CPUName;
+        this->CPUName = nullptr;
+    }
+
+    this->CPUName = new char[strlen(inputCPUName) + 1];
+    strcpy(this->CPUName, inputCPUName);
 }
 
 void CPU::setCPUPrice(double inputCPUPrice)
 {
+    this->price = inputCPUPrice;
 }
 
 void CPU::setCPUProcessors(int inputProcessors)
 {
+    this->processors = inputProcessors;
 }
 
 void CPU::setCPUThreads(int inputThreads)
 {
+    this->threads = inputThreads;
 }
 
 void CPU::setCPUGHz(double inputGHz)
 {
+    this->GHz = inputGHz;
 }
 
 char *CPU::getCPUName()
 {
-    return nullptr;
+    return this->CPUName;
 }
 
 double CPU::getCPUPrice()
 {
-    return 0.0;
+    return this->price;
 }
 
 double CPU::getCPUGHz()
 {
-    return 0.0;
+    return this->GHz;
 }
 
 int CPU::getCPUProcessors()
 {
-    return 0;
+    return this->processors;
 }
 
 int CPU::getCPUThreads()
 {
-    return 0;
+    return this->threads;
+}
+
+void CPU::printCPUSpecs() {
+
+    std::cout << "Name: " << this->CPUName << std::endl
+        << "Price: " << this->price << std::endl
+        << "GHz: " << this->GHz << std::endl
+        << "Proccessors: " << this->processors << std::endl
+        << "Threads: " << this->threads << std::endl;
 }
 
 CPU::~CPU()
 {
+    delete[] this->CPUName;
 }

@@ -11,12 +11,18 @@ private:
 
 public:
 
+    SSD();
     SSD(const char* inputSSDName);
+    SSD(const char* inputSSDName, int inputSSDMemory);
+    SSD(const char* inputSSDName, int inputSSDMemory, double inputSSDUpSpeed);
+    SSD(const char* inputSSDName, int inputSSDMemory, double inputSSDUpSpeed, double inputSSDDownSpeed);
 
     void setSSDName(const char* inputSSDName);
     void setSSDMemory(int inputSSDMemory);
     void setSSDUpSpeed(double inputSSDUpSpeed);
     void setSSDDownSpeed(double inputSSDDownSpeed);
+
+    void printSSDSpecs();
 
     char* getSSDName();
     int getSSDMemory();

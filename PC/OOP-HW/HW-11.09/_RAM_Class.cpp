@@ -1,5 +1,21 @@
 #include "_RAM_Class.h"
 
+RAM::RAM()
+{
+}
+
+RAM::RAM(const char *inputRAMName, const char *inputRAMSocket)
+{
+}
+
+RAM::RAM(const char *inputRAMName, const char *inputRAMSocket, double inputRAMPrice)
+{
+}
+
+RAM::RAM(const char *inputRAMName, const char *inputRAMSocket, double inputRAMPrice, int inputRAMMemory)
+{
+}
+
 RAM::RAM(const char *inputRAMName)
 {
 }
@@ -17,6 +33,10 @@ void RAM::setRAMPrice(double inputRAMPrice)
 }
 
 void RAM::setRAMMemory(int inputRAMMemory)
+{
+}
+
+void RAM::printRAMSpecs()
 {
 }
 
