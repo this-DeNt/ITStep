@@ -16,6 +16,7 @@ public:
     SSD(const char* inputSSDName, int inputSSDMemory);
     SSD(const char* inputSSDName, int inputSSDMemory, double inputSSDUpSpeed);
     SSD(const char* inputSSDName, int inputSSDMemory, double inputSSDUpSpeed, double inputSSDDownSpeed);
+    SSD(const SSD & copySSD);
 
     void setSSDName(const char* inputSSDName);
     void setSSDMemory(int inputSSDMemory);

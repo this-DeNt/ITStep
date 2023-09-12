@@ -36,6 +36,17 @@ CPU::CPU(const char* inputCPUName, double inputCPUPrice, int inputCPUProcessors,
     this->GHz = inputCPUGHz;
 }
 
+CPU::CPU(const CPU &copyCPU)
+{
+    this->CPUName = new char[strlen(copyCPU.CPUName) + 1];
+    strcpy(this->CPUName, copyCPU.CPUName);
+
+    this->price = copyCPU.price;
+    this->processors = copyCPU.processors;
+    this->threads = copyCPU.threads;
+    this->GHz = copyCPU.GHz;
+}
+
 void CPU::setCPUName(const char *inputCPUName)
 {
     if (this->CPUName != nullptr) {

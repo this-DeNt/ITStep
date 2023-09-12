@@ -18,6 +18,7 @@ public:
     CPU(const char* inputCPUName, double inputCPUPrice, int inputCPUProcessors);
     CPU(const char* inputCPUName, double inputCPUPrice, int inputCPUProcessors, int inputCPUThreads);
     CPU(const char* inputCPUName, double inputCPUPrice, int inputCPUProcessors, int inputCPUThreads, double inputCPUGHz);
+    CPU(const CPU & copyCPU);
 
     void setCPUName(const char* inputCPUName);
     void setCPUPrice(double inputCPUPrice);

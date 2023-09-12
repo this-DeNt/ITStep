@@ -8,7 +8,7 @@ int main(void) {
     LAPTOP laptopA("TUF", "Intel", 20, 8, 16, 3.2, "RTX", 30, 16, 5.5, "Fury", "DDR5", 15, 32, "Asus", 200, 168, 256);
     laptopA.printSpecs();
     laptopA.printCount();
-    LAPTOP laptopB("TUF", "Intel", 20, 8, 16, 3.2, "RTX", 30, 16, 5.5, "Fury", "DDR5", 15, 32, "Asus", 200, 168, 256);
+    LAPTOP laptopB = laptopA;
     laptopB.printSpecs();
     laptopB.printCount();
 }

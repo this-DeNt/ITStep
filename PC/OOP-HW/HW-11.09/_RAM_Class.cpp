@@ -31,6 +31,18 @@ RAM::RAM(const char *inputRAMName, const char *inputRAMSocket, double inputRAMPr
     this->memory = inputRAMMemory;
 }
 
+RAM::RAM(const RAM &copyRAM)
+{
+    this->RAMName = new char[strlen(copyRAM.RAMName) + 1];
+    strcpy(this->RAMName, copyRAM.RAMName);
+
+    this->socket = new char[strlen(copyRAM.socket) + 1];
+    strcpy(this->socket, copyRAM.socket);
+
+    this->price = copyRAM.price;
+    this->memory = copyRAM.memory;
+}
+
 void RAM::setRAMName(const char *inputRAMName)
 {
     if (this->RAMName != nullptr) {

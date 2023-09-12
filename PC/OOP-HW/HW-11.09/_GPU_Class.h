@@ -16,6 +16,7 @@ public:
     GPU(const char* inputGPUName, double inputPrice);
     GPU(const char* inputGPUName, double inputPrice, int inputMemory);
     GPU(const char* inputGPUName, double inputPrice, int inputMemory, double inputGHz);
+    GPU(const GPU & copyGPU);
 
     void setGPUName(const char* inputGPUName);
     void setGPUPrice(double inputGPUPrice);

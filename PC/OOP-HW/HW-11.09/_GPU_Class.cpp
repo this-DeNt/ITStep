@@ -30,6 +30,16 @@ GPU::GPU(const char *inputGPUName, double inputPrice, int inputMemory, double in
     this->GHz = inputGHz;
 }
 
+GPU::GPU(const GPU &copyGPU)
+{
+    this->GPUName = new char[strlen(copyGPU.GPUName) + 1];
+    strcpy(this->GPUName, copyGPU.GPUName);
+    
+    this->price = copyGPU.price;
+    this->memory = copyGPU.memory;
+    this->GHz = copyGPU.GHz;
+}
+
 void GPU::setGPUName(const char *inputGPUName)
 {
     if (this->GPUName != nullptr) {

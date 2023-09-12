@@ -30,6 +30,7 @@ public:
                 this->price = laptopCPU.getCPUPrice() + laptopGPU.getGPUPrice() + laptopRAM.getRAMPrice();
             }
 
+    LAPTOP(const LAPTOP& copyLAPTOP);
     static void printCount();
     void printSpecs();
     ~LAPTOP();

@@ -1,6 +1,21 @@
 #include "_Laptop_Class.h"
+#include "_Framework.h"
 
 unsigned int LAPTOP::laptopCount = 0;
+
+LAPTOP::LAPTOP(const LAPTOP &copyLAPTOP)
+{
+    this->name = new char[strlen(copyLAPTOP.name) + 1];
+    strcpy(this->name, copyLAPTOP.name);
+
+    this->price = copyLAPTOP.price;
+
+    this->laptopCPU = copyLAPTOP.laptopCPU;
+    this->laptopGPU = copyLAPTOP.laptopGPU;
+    this->laptopRAM = copyLAPTOP.laptopRAM;
+    this->laptopSSD = copyLAPTOP.laptopSSD;
+}
+
 void LAPTOP::printCount()
 {
     laptopCount++;

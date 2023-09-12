@@ -30,6 +30,16 @@ SSD::SSD(const char *inputSSDName, int inputSSDMemory, double inputSSDUpSpeed, d
     this->downloadSpeed = inputSSDDownSpeed;
 }
 
+SSD::SSD(const SSD &copySSD)
+{
+    this->SSDName = new char[strlen(copySSD.SSDName) + 1];
+    strcpy(this->SSDName, copySSD.SSDName);
+
+     this->memory = copySSD.memory;
+     this->uploadSpeed = copySSD.uploadSpeed;
+     this->downloadSpeed = copySSD.downloadSpeed;
+}
+
 void SSD::setSSDName(const char *inputSSDName)
 {
     if (this->SSDName != nullptr) {

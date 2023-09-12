@@ -16,6 +16,7 @@ public:
     RAM(const char* inputRAMName, const char* inputRAMSocket);
     RAM(const char* inputRAMName, const char* inputRAMSocket, double inputRAMPrice);
     RAM(const char* inputRAMName, const char* inputRAMSocket, double inputRAMPrice, int inputRAMMemory);
+    RAM(const RAM & copyRAM);
     
     void setRAMName(const char* inputRAMName);
     void setRAMSocket(const char* inputRAMSocket);
