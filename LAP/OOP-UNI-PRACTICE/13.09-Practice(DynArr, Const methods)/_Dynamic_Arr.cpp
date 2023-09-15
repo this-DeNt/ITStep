@@ -206,16 +206,20 @@ DynArr DynArr::operator+(DynArr inputArr)
 
 DynArr &DynArr::operator--()
 {
-    int* temp = new int[--arrSize];
+    int tempSize = --arrSize;
+    int* temp = new int[tempSize];
 
-    for (int i = 0; i < --this->arrSize; ++i) {
+
+    for (int i = 0; i < tempSize; ++i) {
 
         temp[i] = this->arrPtr[i];
     }
 
     delete[] this->arrPtr;
     this->arrPtr = temp;
-    --this->arrSize;
+    this->arrSize = tempSize;
+
+    return *this;
 }
 
 DynArr DynArr::operator-(int inputDecrement)
