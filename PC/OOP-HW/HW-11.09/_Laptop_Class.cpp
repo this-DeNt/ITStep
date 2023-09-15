@@ -43,8 +43,4 @@ void LAPTOP::printSpecs()
 LAPTOP::~LAPTOP()
 {
     delete[] this->name;
-    laptopCPU.~CPU();
-    laptopGPU.~GPU();
-    laptopRAM.~RAM();
-    laptopSSD.~SSD();
 }
