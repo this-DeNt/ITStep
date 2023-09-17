@@ -157,6 +157,30 @@ void myString::printString() const
     }
 }
 
+void myString::myDelCh(const char inputChar)
+{
+    unsigned int tempStrLen = this->_length;
+    char* tempStr = new char[tempStrLen + 1];
+
+    unsigned int j = 0;
+
+    for (int i = 0; i < tempStrLen; ++i) {
+
+        if (this->_str[i] != inputChar) {
+
+            tempStr[j] = this->_str[i];
+            ++j;        
+        }
+    }
+
+    tempStr[j] = '\0';
+
+    delete[] this->_str;
+    this->_str = tempStr;
+    this->_length = this->myStrLen();
+
+}
+
 char *myString::getStrPtr() const
 {
     return this->_str;
@@ -182,22 +206,13 @@ void myString::operator+(const myString &inputString)
     this->myStrCat(inputString);
 }
 
-myString myString::operator+(const myString &inputString) const
-{
-    myString tempString;
-
-    tempString.myStrCpy(this->_str);
-    tempString.myStrCat(inputString);
-
-    return tempString;
-}
-
 void myString::operator=(const myString& inputString)
 {
     this->myStrCpy(inputString);
 }
 
-myString myString::operator=(const myString& inputString) const
+void myString::operator++()
 {
+    ++this->_length;
+    this->_str[this->_length] = '\0';
 }
-

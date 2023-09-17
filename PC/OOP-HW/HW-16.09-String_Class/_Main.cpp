@@ -3,9 +3,10 @@
 
 int main(void) {
 
-    myString roflan = "roflan";
-    myString roflanX = "Roflan";
-    myString roflanY;
+    myString testStr = "test";
+    myString testStr2 = "test2";
 
-    roflanY = roflan + roflanX;
+    testStr.printString();
+
+    
 }

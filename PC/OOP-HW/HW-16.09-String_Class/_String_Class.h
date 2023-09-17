@@ -27,6 +27,8 @@ public:
 
     void myStrCat(const myString& inputStr);
 
+    void myDelCh(const char inputChar);
+
     void printString() const;
 
     char* getStrPtr() const;
@@ -36,10 +38,10 @@ public:
     static unsigned int getCount();
 
     void operator +(const myString& inputString);
-    myString operator+(const myString& inputString) const;
 
     void operator=(const myString& inputString);
-    myString operator=(const myString& inputString) const;
+
+    void operator ++();
 
     ~myString();
 };
