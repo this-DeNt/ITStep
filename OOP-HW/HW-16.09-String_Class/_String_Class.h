@@ -35,6 +35,10 @@ public:
     
     unsigned int getStrLen() const;
 
+    void setStr(const char* inputStr);
+
+    void setLen(const unsigned int inputStrLen);
+
     static unsigned int getCount();
 
     void operator +(const myString& inputString);
@@ -43,5 +47,21 @@ public:
 
     void operator ++();
 
+    char& operator[](const unsigned int idx) const;
+
+    void operator()();
+
     ~myString();
 };
+
+myString& operator+(const myString& inputStr, char n);
+
+myString& operator+(char n, const myString& inputStr);
+
+myString& operator+(const unsigned int inputInt, const myString& inputStr);
+
+myString& operator+(const myString& inputStr, const unsigned int inputInt);
+
+myString& operator++(const myString& inputStr);
+
+myString& operator++(const myString& inputStr, int formal);

@@ -7,6 +7,4 @@ int main(void) {
     myString testStr2 = "test2";
 
     testStr.printString();
-
-    
 }

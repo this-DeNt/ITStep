@@ -191,6 +191,16 @@ unsigned int myString::getStrLen() const
     return this->_length;
 }
 
+void myString::setStr(const char *inputStr)
+{
+    this->myStrCat(inputStr);
+}
+
+void myString::setLen(const unsigned int inputStrLen)
+{
+    this->_length = inputStrLen;
+}
+
 unsigned int myString::getCount()
 {
     return _stringCount;
@@ -215,4 +225,37 @@ void myString::operator++()
 {
     ++this->_length;
     this->_str[this->_length] = '\0';
+}
+
+char &myString::operator[](const unsigned int idx) const
+{
+    if (idx >= this->getStrLen()) {
+
+        return this->_str[idx - 1];
+    }
+
+    return this->_str[idx];
+}
+
+void myString::operator()()
+{
+    char buffer[50];
+
+    std::cout << "Enter str: ";
+    std::cin.ignore();
+    std::cin.getline(buffer, 50);
+
+    this->setLen(50 + 1);
+    this->setStr(buffer);
+    this->setLen(this->myStrLen() + 1);
+}
+
+myString &operator+(const myString &inputStr, const char* n)
+{
+    myString temp(inputStr);
+    temp.setLen(temp.getStrLen() + 1);
+
+    temp.setStr(n);
+
+    return temp;
 }
