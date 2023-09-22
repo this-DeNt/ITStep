@@ -30,11 +30,11 @@ public:
 
     MATRIX& operator=(const MATRIX& _inputMat);
 
-    MATRIX operator+(const mat_type _input);
-    MATRIX operator-(const mat_type _input);
-    MATRIX operator*(const mat_type _input);
-    MATRIX operator/(const mat_type _input);
-    MATRIX operator=(const mat_type _input);
+    MATRIX& operator+(const mat_type _input);
+    MATRIX& operator-(const mat_type _input);
+    MATRIX& operator*(const mat_type _input);
+    MATRIX& operator/(const mat_type _input);
+    MATRIX& operator=(const mat_type _input);
 
 };
 
@@ -140,4 +140,135 @@ inline mat_type MATRIX<mat_type>::returnMatrixMin() const
     }
 
     return tempMin;
+}
+
+template <class mat_type>
+inline mat_type &MATRIX<mat_type>::operator[](const unsigned int _Idx) const
+{
+    if (_Idx > this->_rows) {
+
+        return this->_matrix_ptr[this->_rows][this->_rows];
+    }
+
+    if (_Idx > this->_cols) {
+
+        return this->_matrix_ptr[this->_cols][this->_cols];
+    }
+
+    return this->_matrix_ptr[_Idx][_Idx];
+}
+
+template <class mat_type>
+inline MATRIX<mat_type> &MATRIX<mat_type>::operator=(const MATRIX &_inputMat)
+{
+    if (this == &_inputMat) {
+
+        return *this;
+    }
+
+    for (int i = 0; i < this->_rows; ++i) {
+
+        delete[] this->_matrix_ptr[i];
+    }
+
+    delete[] this->_matrix_ptr;
+
+    this->_rows = _inputMat._rows;
+    this->_cols = _inputMat._cols;
+
+    this->_matrix_ptr = new mat_type*[this->_rows];
+    for (int i = 0; i < this->_rows; ++i) {
+
+        this->_matrix_ptr[i] = new mat_type[this->_cols];
+    }
+
+    for (int i = 0; i < this->_rows; ++i) {
+
+        for (int j = 0; j < this->_cols; ++j) {
+
+            this->_matrix_ptr[i][j] = _inputMat._matrix_ptr[i][j];
+        }
+    }
+
+    return *this;
+}
+
+template <class mat_type>
+inline MATRIX<mat_type>& MATRIX<mat_type>::operator+(const mat_type _input)
+{
+    MATRIX<mat_type> tempMAT(this->_rows, this->_cols);
+
+    for (int i = 0; i < tempMAT._rows; ++i) {
+
+        for (int j = 0; j < tempMAT._cols; ++j) {
+
+            tempMAT[i][j] += _input;
+        }
+    }
+
+    return tempMAT;
+}
+
+template <class mat_type>
+inline MATRIX<mat_type> &MATRIX<mat_type>::operator-(const mat_type _input)
+{
+    MATRIX<mat_type> tempMAT(this->_rows, this->_cols);
+
+    for (int i = 0; i < tempMAT._rows; ++i) {
+
+        for (int j = 0; j < tempMAT._cols; ++j) {
+
+            tempMAT[i][j] -= _input;
+        }
+    }
+
+    return tempMAT;
+}
+
+template <class mat_type>
+inline MATRIX<mat_type> &MATRIX<mat_type>::operator*(const mat_type _input)
+{
+    MATRIX<mat_type> tempMAT(this->_rows, this->_cols);
+
+    for (int i = 0; i < tempMAT._rows; ++i) {
+
+        for (int j = 0; j < tempMAT._cols; ++j) {
+
+            tempMAT[i][j] *= _input;
+        }
+    }
+
+    return tempMAT;
+}
+
+template <class mat_type>
+inline MATRIX<mat_type> &MATRIX<mat_type>::operator/(const mat_type _input)
+{
+    MATRIX<mat_type> tempMAT(this->_rows, this->_cols);
+
+    for (int i = 0; i < tempMAT._rows; ++i) {
+
+        for (int j = 0; j < tempMAT._cols; ++j) {
+
+            tempMAT[i][j] /= _input;
+        }
+    }
+
+    return tempMAT;
+}
+
+template <class mat_type>
+inline MATRIX<mat_type> &MATRIX<mat_type>::operator=(const mat_type _input)
+{
+    MATRIX<mat_type> tempMAT(this->_rows, this->_cols);
+
+    for (int i = 0; i < tempMAT._rows; ++i) {
+
+        for (int j = 0; j < tempMAT._cols; ++j) {
+
+            tempMAT[i][j] = _input;
+        }
+    }
+
+    return tempMAT;
 }
