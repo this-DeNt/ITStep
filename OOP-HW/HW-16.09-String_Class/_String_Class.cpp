@@ -39,6 +39,21 @@ myString::myString(const char *userStrInput)
     ++_stringCount;
 }
 
+myString::myString(std::initializer_list<char> _InputStr) {
+
+    this->_length = _InputStr.size();
+
+    this->_str = new char[this->_length];
+
+    for (auto i = _InputStr.begin(); i != _InputStr.end(); ++i) {
+
+        *this->_str = *i;
+        ++*this->_str;
+    }
+
+    this->_str -= this->_length;
+}
+
 unsigned int myString::myStrLen() const
 {
     unsigned int tempStrLen = 0;

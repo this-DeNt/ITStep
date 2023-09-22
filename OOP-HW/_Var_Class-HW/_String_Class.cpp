@@ -259,3 +259,7 @@ myString &operator+(const myString &inputStr, const char* n)
 
     return temp;
 }
+
+myString::myString(initializer_list<char> _InputStr)
+{
+}

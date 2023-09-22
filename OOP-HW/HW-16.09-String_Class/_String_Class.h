@@ -1,5 +1,5 @@
 #pragma once
-#include <iostream>
+#include "framework.h"
 
 class myString {
 
@@ -14,6 +14,7 @@ public:
     myString();
     myString(const unsigned int userLenInput);
     myString(const char* userStrInput);
+    myString(std::initializer_list<char> _InputStr);
 
     unsigned int myStrLen() const;
 
@@ -50,6 +51,8 @@ public:
     char& operator[](const unsigned int idx) const;
 
     void operator()();
+
+
 
     ~myString();
 };
