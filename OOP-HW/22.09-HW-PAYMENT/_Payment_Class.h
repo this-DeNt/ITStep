@@ -5,23 +5,42 @@ class PAYMENT {
 
 private:
 
-    std::string _Surname;
-    std::string _Name;
-    std::string _Patronym;
+    static const double _IncomeTax;
+    static const double _PensionTax;
 
-    unsigned int _YearSal;
-    unsigned int _Tax;
-    unsigned short _EmploYear;
-    unsigned short _Surplus;
-    unsigned short _Workdays;
+    const char* _Surname;
+    const char* _Name;
+    const char* _Patronym;
+
     const unsigned short _WorkDaysMin;
-    unsigned int _Income;
-    unsigned int _Hold;
+    unsigned short _EmploYear;
+    unsigned short _Workdays;
+    double _Surplus;
+    double _YearSal;
+    double _Income;
+    double _Hold;
+
+    double returnRealIncomeDays(void) const;
+    double returnSurplusIncome(void) const;
+
 
 public:
 
     PAYMENT() = default;
-    PAYMENT(const std::string& _InputSur, const std::string& _InputName, const std::string& _InputPatro, const unsigned int _InputYearSal, const unsigned int _InputTax, const unsigned short _InputEmploYear,
-    const unsigned short _InputSurplus, const unsigned short _InputWorkDays, const unsigned short _InputWorkDaysMin);
+    PAYMENT(const char* _InputSur, const char* _InputName, const char* _InputPatro, const double _InputYearSal, const unsigned short _InputEmploYear,
+            const unsigned short _InputWorkDays, const unsigned short _InputWorkDaysMin, const double _IncomeInput, const double _HoldInput);
 
+    unsigned int returnExp(const unsigned int _InputCurrentYear) const;
+    double returnIncome(void) const;
+    double returnHold(void) const;
+    double returnRealIncome(void) const;
+    double returnTaxedIncome(void) const;
+
+    void operator+(const double _Input);
+    void operator-(const double _Input);
+    void operator*(const double _Input);
+    void operator/(const double _Input);
+    void operator=(const double _Input);
+
+    ~PAYMENT();
 };
