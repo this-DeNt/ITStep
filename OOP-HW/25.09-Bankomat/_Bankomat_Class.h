@@ -1,40 +1,34 @@
 #pragma once
 #include "framework.h"
 
+typedef unsigned short u_short;
+
+struct BILL
+{
+    u_short _nominal;
+    size_t _billCount;
+};
+
+
 class BANKOMAT {
 
-private:
-
-    std::string _identification;
-    unsigned int _currentBSum;
-    const unsigned int _minSum;
-    const unsigned int _maxSum;
-
-    unsigned short _tenBillCount;
-    unsigned short _twentBillCount;
-    unsigned short _fiftBillCount;
-    unsigned short _hundBillCount;
-    unsigned short _thundBillCount;
-    unsigned short _fhundBillCount;
-    unsigned short _thsdBillCount;
-
-    bool isValidSum(const unsigned int _UserInput) const;
-    unsigned int countCurrentSum() const;
-
-public:
-
-    BANKOMAT() = default;
-    BANKOMAT(const std::string _IdInput);
-    BANKOMAT(const unsigned short _TenInput, const unsigned short _twentInput, const unsigned short _fiftInput, const unsigned short _hundInput, const unsigned short _thundInput,
-             const unsigned short _fhundInput, const unsigned short _thsdInput, const unsigned short _MinInput, const unsigned int _MaxInput);
+    private:
     
-    unsigned int returnCurrentSum(void) const;
+        static size_t _bankomatCount;
 
-    void deposit(unsigned int _UserInput);
+        const std::string _ID;
+        size_t _CurrentBSum;
 
-    void withdraw(unsigned int _UserInput);
+        BILL* _billArr;
+        size_t _billArrSize;
 
-    std::string getId() const;
+    public:
 
-    std::string returnSum() const;
+        BANKOMAT();
+        BANKOMAT(const std::string _InputID);
+        BANKOMAT(const std::string _InputID, const size_t _InputBSum);
+        BANKOMAT(const std::string _InputID, const size_t _InputBSum, const size_t _InputBillArrSize);
+        BANKOMAT(const std::string _InputID, const BANKOMAT& _InputB);
+        BANKOMAT(const BANKOMAT& _InputB);
+        BANKOMAT(const BANKOMAT && _InputB);
 };

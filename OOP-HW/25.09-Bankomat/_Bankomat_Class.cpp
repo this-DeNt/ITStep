@@ -1,176 +1,63 @@
 #include "_Bankomat_Class.h"
+#include "framework.h"
 
-bool BANKOMAT::isValidSum(const unsigned int _UserInput) const
+size_t BANKOMAT::_bankomatCount = 0;
+
+BANKOMAT::BANKOMAT():_ID(nullptr)
 {
-    if (_UserInput > this->_maxSum || _UserInput < _minSum) {
-
-        return false;
-    }
-
-    return true;
+    this->_CurrentBSum = 0;
+    this->_billArr = nullptr;
+    this->_billArrSize = 0;
 }
 
-unsigned int BANKOMAT::countCurrentSum() const
+BANKOMAT::BANKOMAT(const std::string _InputID):_ID(_InputID)
 {
-    return (this->_tenBillCount * 10) + (this->_twentBillCount * 20) + (this->_fiftBillCount * 50) + (this->_hundBillCount * 100) + (this->_thundBillCount * 200) + (this->_fhundBillCount * 500) + (this->_thsdBillCount * 1000);
+    this->_CurrentBSum = 0;
+    this->_billArr = nullptr;
+    this->_billArrSize = 0;
 }
 
-BANKOMAT::BANKOMAT(std::string _IdInput) : _minSum(0), _maxSum(0)
+BANKOMAT::BANKOMAT(const std::string _InputID, const size_t _InputBSum):_ID(_InputID)
 {
-    this->_identification = _IdInput;
+    this->_CurrentBSum = _InputBSum;
+
+    this->_billArr = nullptr;
+    this->_billArrSize = 0;
 }
 
-BANKOMAT::BANKOMAT(const unsigned short _TenInput, const unsigned short _twentInput, const unsigned short _fiftInput, const unsigned short _hundInput, const unsigned short _thundInput, const unsigned short _fhundInput, const unsigned short _thsdInput, const unsigned short _MinInput, const unsigned int _MaxInput):_minSum(_MinInput), _maxSum(_MaxInput)
+BANKOMAT::BANKOMAT(const std::string _InputID, const size_t _InputBSum, const size_t _InputBillArrSize):_ID(_InputID)
 {
-    this->_tenBillCount = _TenInput;
-    this->_twentBillCount = _twentInput;
-    this->_fiftBillCount = _fiftInput;
-    this->_hundBillCount = _hundInput;
-    this->_thundBillCount = _thundInput;
-    this->_fhundBillCount = _fhundInput;
-    this->_thsdBillCount = _thsdInput;
+    this->_CurrentBSum = _InputBSum;
 
-    this->_currentBSum = this->countCurrentSum();
+    this->_billArrSize = _InputBillArrSize;
+    this->_billArr = new BILL[this->_billArrSize];
 }
 
-unsigned int BANKOMAT::returnCurrentSum(void) const
+BANKOMAT::BANKOMAT(const std::string _InputID, const BANKOMAT &_InputB):_ID(_InputID)
 {
-    return this->countCurrentSum();
+    this->_CurrentBSum = _InputB._CurrentBSum;
+    this->_billArrSize = _InputB._billArrSize;
+    this->_billArr = new BILL[this->_billArrSize];
+
+    for (int i = 0; i < this->_billArrSize; ++i) {
+
+        this->_billArr[i] = _InputB._billArr[i];
+    }
 }
 
-void BANKOMAT::deposit(unsigned int _UserInput)
+BANKOMAT::BANKOMAT(const BANKOMAT &_InputB):_ID(_InputB._ID)
 {
-    if (!this->isValidSum(_UserInput)) { return; }
+    this->_CurrentBSum = _InputB._CurrentBSum;
+    this->_billArrSize = _InputB._billArrSize;
+    this->_billArr = new BILL[this->_billArrSize];
 
-    this->_currentBSum += _UserInput;
+    for (int i = 0; i < this->_billArrSize; ++i) {
 
-    while (this->_currentBSum % 10 != 0)
-    {
-        --this->_currentBSum;
+        this->_billArr[i] = _InputB._billArr[i];
     }
+}
 
-    while (_UserInput % 10 != 0) {
-
-        --_UserInput;
-    }
-
-    while (_UserInput % 1000) {
-
-        _UserInput -= 1000;
-        ++this->_thsdBillCount;
-    }
-
-    while (_UserInput % 500)
-    {
-        _UserInput -= 500;
-        ++this->_fhundBillCount;
-    }
-
-    while (_UserInput % 200)
-    {
-        _UserInput -= 200;
-        ++this->_thundBillCount;
-    }
-
-    while (_UserInput % 100)
-    {
-        _UserInput -= 100;
-        ++this->_hundBillCount;
-    }
-
-    while (_UserInput % 50)
-    {
-        _UserInput -= 50;
-        ++this->_fiftBillCount;
-    }
-
-    while (_UserInput % 20)
-    {
-        _UserInput -= 20;
-        ++this->_twentBillCount;
-    }
-
-    while (_UserInput % 10)
-    {
-        _UserInput -= 10;
-        ++this->_tenBillCount;
-    }
+BANKOMAT::BANKOMAT(const BANKOMAT &&_InputB):_ID(_InputB._ID)
+{
     
-}
-
-void BANKOMAT::withdraw(unsigned int _UserInput)
-{
-    if (!this->isValidSum(_UserInput)) { return; }
-
-    this->_currentBSum -= _UserInput;
-
-    while (this->_currentBSum % 10 != 0)
-    {
-        ++this->_currentBSum;
-    }
-
-    while (_UserInput % 10 != 0) {
-
-        ++_UserInput;
-    }
-
-    while (_UserInput % 1000) {
-
-        _UserInput -= 1000;
-        --this->_thsdBillCount;
-    }
-
-    while (_UserInput % 500)
-    {
-        _UserInput -= 500;
-        --this->_fhundBillCount;
-    }
-
-    while (_UserInput % 200)
-    {
-        _UserInput -= 200;
-        --this->_thundBillCount;
-    }
-
-    while (_UserInput % 100)
-    {
-        _UserInput -= 100;
-        --this->_hundBillCount;
-    }
-
-    while (_UserInput % 50)
-    {
-        _UserInput -= 50;
-        --this->_fiftBillCount;
-    }
-
-    while (_UserInput % 20)
-    {
-        _UserInput -= 20;
-        --this->_twentBillCount;
-    }
-
-    while (_UserInput % 10)
-    {
-        _UserInput -= 10;
-        --this->_tenBillCount;
-    }
-    
-}
-
-std::string BANKOMAT::getId() const
-{
-    return this->_identification;
-}
-
-std::string BANKOMAT::returnSum() const
-{
-    std::string temp;
-    char buffer[100];
-
-    itoa(_currentBSum, buffer, 10);
-
-    temp = buffer;
-
-    return temp;
 }
