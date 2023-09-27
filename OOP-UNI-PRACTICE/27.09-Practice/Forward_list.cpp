@@ -93,46 +93,33 @@ void List::addSpec(char data, int pos)
 {
 	Element* temp = Head;
 
-	int i = 0;
-
-	while(temp != 0) {
+	while (pos - 1 > 0) {
 
 		temp = temp->Next;
-		++i;
-		if ( i == pos) {
-
-			Element* curr = temp;
-
-			temp->data = data;
-			temp = temp->Next;
-			break;
-		}
+		--pos;
 	}
+
+	Element* addData;
+	addData->data = data;
+	addData->Next = temp->Next;
+
+	temp->Next = addData;
 }
 
 void List::delSpec(int pos)
 {
 	Element* temp = Head;
 
-	int i = 0;
-
-	while (temp != 0)  {
-
-		Element* temp2;
-		temp2 = temp;
+	while (pos - 1 > 0) {
 
 		temp = temp->Next;
-		++i;
-
-		if (pos == i) {
-
-			temp2 = temp;
-			
-			temp2->Next = temp->Next;
-			break;
-
-		}
+		--pos;
 	}
+
+	Element* del = temp->Next;
+	temp->Next = del->Next;
+
+	delete del;
 }
 
 void List::Del()
@@ -170,7 +157,7 @@ void List::Print()
 }
 
 //  
-void main()
+int main()
 {
 	//    List
 	List lst;
@@ -187,10 +174,8 @@ void main()
 	//   
 	lst.Print();
 	//    
-	lst.Del();
-	lst.Del();
-	lst.Del();
-	//  
+	
+	lst.addSpec('a', 5);
 	lst.Print();
 }
 
