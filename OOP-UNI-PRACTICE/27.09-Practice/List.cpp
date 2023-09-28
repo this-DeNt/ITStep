@@ -9,35 +9,19 @@ struct Elem
 
 class List
 {
-    // , 
     Elem* Head, * Tail;
-    //  
     int Count;
 
 public:
 
-    // 
     List();
-    //  
     List(const List&);
-    // 
     ~List();
-
-    //  
     int GetCount();
-    //   
-    Elem* GetElem(int);
-
-    //   
     void DelAll();
     void Del(int pos);
-
-    //    
-    void AddHead(int n);
-
-    //  
+    void AddTail(int n);
     void Print();
-    
     int returnTail();
 
 };
@@ -109,30 +93,29 @@ void List::Del(int pos)
     Count--; 
 }
 
-void List::AddHead(int n)
-{
-    //  
-    Elem* temp = new Elem;
-
-    //  
-    temp->prev = 0;
-    //  
-    temp->data = n;
-    //  -  
-    temp->next = Head;
-
-    //   ?
-    if (Head != 0)
-        Head->prev = temp;
-
-    //   ,       
-    if (Count == 0)
-        Head = Tail = temp;
-    else
-        //    - 
-        Head = temp;
-
-    Count++;
+void List::AddTail(int n) 
+{ 
+    // Создаем новый элемент 
+    Elem* temp = new Elem; 
+    // Следующего нет 
+    temp->next = 0; 
+    // Заполняем данные 
+    temp->data = n; 
+    // Предыдущий - бывший хвост 
+    temp->prev = Tail; 
+ 
+    // Если элементы есть? 
+    if (Tail != 0) 
+        Tail->next = temp; 
+ 
+    // Если элемент первый, то он одновременно и голова и хвост 
+    if (Count == 0) 
+        Head = Tail = temp; 
+    else 
+        // иначе новый элемент - хвостовой 
+        Tail = temp; 
+ 
+    Count++; 
 }
 
 void List::Print()
@@ -175,6 +158,7 @@ int List::returnTail()
     newTail->next = nullptr;
 
     Tail = newTail;
+    --Count;
 
     return temp;
 }
@@ -183,10 +167,11 @@ int main() {
 
     List lst;
 
-    lst.AddHead(5);
-    lst.AddHead(4);
-    lst.AddHead(3);
-    lst.AddHead(2);
+    lst.AddTail(5);
+    lst.AddTail(4);
+    lst.AddTail(3);
+    lst.AddTail(2);
+    lst.AddTail(7);
 
     std::cout << lst.returnTail() << std::endl;
 
