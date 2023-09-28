@@ -1,38 +1,221 @@
 #pragma once
-
-#include "_String_Class.h"
 #include "framework.h"
 
+template <class varType>
 class var {
 
 private:
 
-    int _intVar;
-    double _doubleVar;
-    myString _stringVar;
+    varType _var;
 
 public:
 
-    var() = default;
-    var(const int _intInput);
-    var(const double _doubleInput);
+    var();
+    var(const varType _Input);
+    var(const var& _InputVar);
+    var(const var&& _InputVar);
 
-    // @brief String constructor. Doubles as a string copy constructor
-    // @param _stringInput constructor receives a copy of the input string
-    // @return Initialises string stored **var** object
-    var(const myString& _stringInput);
+    var& operator=(const var&& _InputVar);
+    var& operator=(const var& _InputVar);
 
-    int getIntVar() const;
-    double getDoubleVar() const;
-    myString getStringVar() const;
+    var& operator+(const var& _InputVar);
+    var& operator-(const var& _InputVar);
+    var& operator*(const var& _InputVar);
+    var& operator/(const var& _InputVar);
+    var& operator+=(const var& _InputVar);
+    var& operator-=(const var& _InputVar);
+    var& operator*=(const var& _InputVar);
+    var& operator/=(const var& _InputVar);
 
-    void setIntVar(const int _intInput);
-    void setDoubleVar(const double _doubleInput);
-    void setStringVar(const myString& _stringInput);
+    bool operator<(const var& _InputVar);
+    bool operator>(const var& _InputVar);
+    bool operator<=(const var& _InputVar);
+    bool operator>=(const var& _InputVar);
+    bool operator==(const var& _InputVar);
+    bool operator!=(const var& _InputVar);
+
+    void print() const;
+
 };
 
-std::ostream& operator<<(std::ostream& os, const var& _inputIntVar);
-std::ostream& operator<<(std::ostream& os, const var& _inputDoubleVar);
-std::ostream& operator<<(std::ostream& os, const var& _inputStringVar);
+template<class varType>
+inline void var<varType>::print() const
+{
+    std::cout << this->_var;
+}
 
-std::istream& operator>>(std::istream& is, var _inputVar);
+template <class varType>
+inline var<varType>::var()
+{
+    this->_var = 0;
+}
+
+template <class varType>
+inline var<varType>::var(const varType _Input)
+{
+    this->_var = _Input;
+}
+
+template <class varType>
+inline var<varType>::var(const var &_InputVar)
+{
+    this->_var = _InputVar._var;
+}
+
+template <class varType>
+inline var<varType>::var(const var &&_InputVar)
+{
+    this->_var = _InputVar._var;
+    _InputVar._var = 0;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator=(const var &&_InputVar)
+{
+    this->_var = _InputVar._var;
+    _InputVar._var = 0;
+
+    return *this;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator=(const var &_InputVar)
+{
+    this->_var = _InputVar._var;
+
+    return *this;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator+(const var &_InputVar)
+{
+    var<varType> temp;
+    temp._var = this->_var + _InputVar._var;
+
+    return temp;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator-(const var &_InputVar)
+{
+    var<varType> temp;
+    temp._var = this->_var - _InputVar._var;
+
+    return temp;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator*(const var &_InputVar)
+{
+    var<varType> temp;
+    temp._var = this->_var * _InputVar._var;
+
+    return temp;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator/(const var &_InputVar)
+{
+    var<varType> temp;
+    temp._var = this->_var / _InputVar._var;
+
+    return temp;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator+=(const var &_InputVar)
+{
+    this->_var += _InputVar._var;
+
+    return *this;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator-=(const var &_InputVar)
+{
+    this->_var -= _InputVar._var;
+
+    return *this;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator*=(const var &_InputVar)
+{
+    this->_var *= _InputVar._var;
+
+    return *this;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator/=(const var &_InputVar)
+{
+    this->_var /= _InputVar._var;
+
+    return *this;
+}
+
+template <class varType>
+inline bool var<varType>::operator<(const var &_InputVar)
+{
+    if (this->_var < _InputVar._var) {
+
+        return true;
+    }
+    
+    return false;
+}
+
+template <class varType>
+inline bool var<varType>::operator>(const var &_InputVar)
+{
+    if (this->_var > _InputVar._var) {
+
+        return true;
+    }
+    
+    return false;
+}
+
+template <class varType>
+inline bool var<varType>::operator<=(const var &_InputVar)
+{
+    if (this->_var <= _InputVar._var) {
+
+        return true;
+    }
+    
+    return false;
+}
+
+template <class varType>
+inline bool var<varType>::operator>=(const var &_InputVar)
+{
+    if (this->_var >= _InputVar._var) {
+
+        return true;
+    }
+    
+    return false;
+}
+
+template <class varType>
+inline bool var<varType>::operator==(const var &_InputVar)
+{
+    if (this->_var == _InputVar._var) {
+
+        return true;
+    }
+    
+    return false;
+}
+
+template <class varType>
+inline bool var<varType>::operator!=(const var &_InputVar)
+{
+    if (this->_var != _InputVar._var) {
+
+        return true;
+    }
+    
+    return false;
+}

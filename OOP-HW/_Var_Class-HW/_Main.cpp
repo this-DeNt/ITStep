@@ -3,7 +3,13 @@
 
 int main(void) {
 
-    var a(1);
+    var<int> a;
+    var<int> b;
 
-    std::cout << a;
+    a += 2;
+    b += 2;
+
+    var<int> c = a + b;
+
+    c.print();
 }
