@@ -1,9 +1,10 @@
 #pragma once
 
 #include <iostream>
-#include <cstdio>
 #include <cstring>
 #include <string>
+#include <vector>
+#include <initializer_list>
 #include <cmath>
-
-#include "_Laptop_Class.h"
+#include <cstdio>
+#include <ctime>
