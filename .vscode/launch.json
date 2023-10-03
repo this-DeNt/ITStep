@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Uni-Prog-Pc/PC/OOP-HW/HW-11.09",
-      "program": "d:/Uni-Prog-Pc/PC/OOP-HW/HW-11.09/build/Debug/outDebug",
+      "cwd": "d:/Uni-Prog-Pc/OOP-HW/_Var_Class-HW",
+      "program": "d:/Uni-Prog-Pc/OOP-HW/_Var_Class-HW/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
