@@ -1,38 +1,52 @@
 #pragma once
-
-#include "_String_Class.h"
 #include "framework.h"
 
+template<class varType>
 class var {
 
 private:
 
-    int _intVar;
-    double _doubleVar;
-    myString _stringVar;
+    varType _variable;
 
 public:
 
-    var() = default;
-    var(const int _intInput);
-    var(const double _doubleInput);
+    var();
+    var(const varType _Input);
 
-    // @brief String constructor. Doubles as a string copy constructor
-    // @param _stringInput constructor receives a copy of the input string
-    // @return Initialises string stored **var** object
-    var(const myString& _stringInput);
+    void operator+(const varType _Input);
+    var& operator+(const varType& _Input);
 
-    int getIntVar() const;
-    double getDoubleVar() const;
-    myString getStringVar() const;
+    void operator-(const varType _Input);
+    var& operator-(const varType& _Input);
 
-    void setIntVar(const int _intInput);
-    void setDoubleVar(const double _doubleInput);
-    void setStringVar(const myString& _stringInput);
+    void operator*(const varType _Input);
+    var& operator*(const varType& _Input);
+
+    void operator/(const varType _Input);
+    var& operator/(const varType& _Input);
 };
 
-std::ostream& operator<<(std::ostream& os, const var& _inputIntVar);
-std::ostream& operator<<(std::ostream& os, const var& _inputDoubleVar);
-std::ostream& operator<<(std::ostream& os, const var& _inputStringVar);
+template <class varType>
+inline var<varType>::var()
+{
+    this->_variable = 0;
+}
 
-std::istream& operator>>(std::istream& is, var _inputVar);
+template <class varType>
+inline var<varType>::var(const varType _Input)
+{
+    this->_variable = _Input;
+}
+
+template <class varType>
+inline void var<varType>::operator+(const varType _Input)
+{
+    this->_variable += _Input;
+}
+
+template <class varType>
+inline var<varType> &var<varType>::operator+(const varType &_Input)
+{
+    this->_variable += _Input;
+    return *this;
+}
