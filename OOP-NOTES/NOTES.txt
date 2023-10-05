@@ -1,12 +1,12 @@
 
-Процедурное прог.: Алгоритмическая декомпозиция (Функции)
+Процедурное прог.: Алгоритмическая деChild (Функции)
 
 Парадигма ООП - предварительно анализируем предметную область будущего проекта, выделяем **сущности** и создаем классы для определения этих сущностей в коде программы
 Зачем? - в ООП все = объект
 
 Объект = определяется сущность многими переменными
 
-ООПрог.:Объектная декомпозиция (Классы/Объекты)
+ООПрог.:Объектная деChild (Классы/Объекты)
 
 Киты(Kits) ООП:
 
@@ -423,7 +423,7 @@ out << - запись строки
 
 1. Вложение
 2. Агрегация
-3. Композиция
+3. Child
 4. Дружба
 5. Наследование
 
@@ -445,12 +445,12 @@ out << - запись строки
 
 Class Laptop:
 
-    Class CPU - Композиция(High Cohesion)
-    Class GPU - Композиция(High Cohesion)
-    Class RAM - Композиция(High Cohesion)
-    Class SSD - Композиция(High Cohesion)
-    Class Keyboard - Композиция(High Cohesion)
-    Class TouchPad - Композиция(High Cohesion)
+    Class CPU - Child(High Cohesion)
+    Class GPU - Child(High Cohesion)
+    Class RAM - Child(High Cohesion)
+    Class SSD - Child(High Cohesion)
+    Class Keyboard - Child(High Cohesion)
+    Class TouchPad - Child(High Cohesion)
     Class * FlashDrive - Агрегация(Low coupling)
     Class * Mouse - Агрегация(Low coupling)
     Class * Speakers - Агрегация(Low coupling)
@@ -483,3 +483,29 @@ Class Laptop:
 virtual - vptr - vtable - method
 
 Так работает динамический Полиморфизм - один интерфейс множество реализаций 
+
+
+
+
+
+class Animal(Parent):
+
+    class Carnivour (Animal Child/Parent):
+
+        class Wolf (Child)
+        class Lion (Child)
+
+    class Herbivour (Animal Child/Parent):
+
+        class Bison (child)
+        class WildBeest (child)
+
+class Continent(Parent):
+
+    class Afrika (Child)
+    class Amerika (Child)
+
+class Afrika - Lion/WildBeest(Composition)
+class Amerika - Wolf/Bison(Composition)
+
+class AnimalWorld - Lion/Wolf/Bison/WildBeest (Composition)
