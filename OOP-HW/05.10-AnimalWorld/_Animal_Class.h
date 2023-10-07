@@ -1,5 +1,5 @@
 #pragma once
-#include "continentframework.h"
+#include "_Continent_Class.h"
 
 class Animal {
 
@@ -11,7 +11,7 @@ class Animal {
 
     public:
 
-        Animal(const double _InputWeight, const double _InputBAlive, const Continent& _InputCont);
+        Animal(const double _InputWeight, const bool _InputBAlive, Continent* _InputCont);
 
         virtual void eat(void) = 0;
 
