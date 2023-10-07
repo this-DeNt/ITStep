@@ -1,65 +1,17 @@
 #pragma once
 #include "framework.h"
 
-<<<<<<< HEAD
-template<class varType>
-=======
 template <class varType>
->>>>>>> c0efaa645c9f470f0f0acefd878f01648b456c46
 class var {
 
 private:
 
-<<<<<<< HEAD
-    varType _variable;
-=======
     varType _var;
->>>>>>> c0efaa645c9f470f0f0acefd878f01648b456c46
 
 public:
 
     var();
     var(const varType _Input);
-<<<<<<< HEAD
-
-    void operator+(const varType _Input);
-    var& operator+(const varType& _Input);
-
-    void operator-(const varType _Input);
-    var& operator-(const varType& _Input);
-
-    void operator*(const varType _Input);
-    var& operator*(const varType& _Input);
-
-    void operator/(const varType _Input);
-    var& operator/(const varType& _Input);
-};
-
-template <class varType>
-inline var<varType>::var()
-{
-    this->_variable = 0;
-}
-
-template <class varType>
-inline var<varType>::var(const varType _Input)
-{
-    this->_variable = _Input;
-}
-
-template <class varType>
-inline void var<varType>::operator+(const varType _Input)
-{
-    this->_variable += _Input;
-}
-
-template <class varType>
-inline var<varType> &var<varType>::operator+(const varType &_Input)
-{
-    this->_variable += _Input;
-    return *this;
-}
-=======
     var(const var& _InputVar);
     var(const var&& _InputVar);
 
@@ -267,4 +219,3 @@ inline bool var<varType>::operator!=(const var &_InputVar)
     
     return false;
 }
->>>>>>> c0efaa645c9f470f0f0acefd878f01648b456c46
