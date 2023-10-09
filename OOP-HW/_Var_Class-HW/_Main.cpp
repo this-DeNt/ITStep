@@ -3,6 +3,9 @@
 
 int main(void) {
 
+<<<<<<< HEAD
+
+=======
     var<int> a;
     var<int> b;
 
@@ -12,4 +15,5 @@ int main(void) {
     var<int> c = a + b;
 
     c.print();
+>>>>>>> c0efaa645c9f470f0f0acefd878f01648b456c46
 }

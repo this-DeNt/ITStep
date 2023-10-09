@@ -1,10 +1,10 @@
 {
+  "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
   "C_Cpp_Runner.cStandard": "",
   "C_Cpp_Runner.cppStandard": "",
-  "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat",
   "C_Cpp_Runner.useMsvc": false,
   "C_Cpp_Runner.warnings": [
     "-Wall",
@@ -55,8 +55,9 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-    "functional": "cpp",
+    "initializer_list": "cpp",
     "array": "cpp",
     "atomic": "cpp",
     "bit": "cpp",
@@ -71,6 +72,7 @@
     "cstdio": "cpp",
     "cstdlib": "cpp",
     "cstring": "cpp",
+    "ctime": "cpp",
     "cwchar": "cpp",
     "cwctype": "cpp",
     "deque": "cpp",
@@ -79,6 +81,7 @@
     "vector": "cpp",
     "exception": "cpp",
     "algorithm": "cpp",
+    "functional": "cpp",
     "iterator": "cpp",
     "memory": "cpp",
     "memory_resource": "cpp",
@@ -90,7 +93,6 @@
     "type_traits": "cpp",
     "utility": "cpp",
     "fstream": "cpp",
-    "initializer_list": "cpp",
     "iosfwd": "cpp",
     "iostream": "cpp",
     "istream": "cpp",
@@ -100,7 +102,6 @@
     "ostream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp",
-    "ctime": "cpp"
+    "typeinfo": "cpp"
   }
 }
