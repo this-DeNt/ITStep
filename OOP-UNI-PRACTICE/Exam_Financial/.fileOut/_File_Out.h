@@ -1,12 +1,18 @@
+#pragma once
+
 #include <D:/Uni-Prog-Pc/OOP-UNI-PRACTICE/Exam_Financial/.framework/examclassframework.h>
 #include <D:/Uni-Prog-Pc/OOP-UNI-PRACTICE/Exam_Financial/.framework/examframework.h>
-#include <D:/Uni-Prog-Pc/OOP-UNI-PRACTICE/Exam_Financial/_Main_Funcs.cpp>
 
-int main() {
-    
+class FileOut {
 
-    Wallet testWallet;
-    Logs testLogs;
+    private:
 
-    printMenu(&testWallet, &testLogs);
-}
+        std::ofstream _out;
+        Logs* _logs;
+
+    public:
+
+        FileOut(const Logs _InputLogs);
+
+        void out();
+};

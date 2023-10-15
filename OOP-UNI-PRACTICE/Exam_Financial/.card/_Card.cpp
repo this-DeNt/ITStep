@@ -60,7 +60,7 @@ std::string Card::getManu(void) const
 
 void Card::setAmount(double _InputAmount)
 {
-    _amount = _InputAmount;
+    _amount += _InputAmount;
 }
 
 

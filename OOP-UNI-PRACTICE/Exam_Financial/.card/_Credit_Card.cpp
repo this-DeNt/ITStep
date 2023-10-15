@@ -10,7 +10,8 @@ Credit::Credit(long long _InputNum, u_short _InputCVV, ExpDate _InputExp, std::s
 void Credit::print(void) const
 {
     std::cout << "============" << std::endl << "Number: " << _NUMBER << std::endl << "Exp. Date: " << _EXP_DATE << "\t" << "CVV: " << _CVV << std::endl
-        << "Personal Amount: " << _amount << std::endl << "Cred. amount: " << _credAmount << "============" << std::endl;
+        << "Personal Amount: " << _amount << std::endl << "Cred. amount: " << _credAmount << "\t" << "Cred. Lim: " << _credLim << std::endl <<
+        _BANK << "\t" << _CARD_MANU << std::endl;
 }
 
 double Credit::getCredLim()
