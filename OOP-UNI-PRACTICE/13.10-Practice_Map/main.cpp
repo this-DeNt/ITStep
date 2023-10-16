@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     sMenu();
 }
 
-void add(std::map<int, std::string> *_InputMap, std::string _InputWord, size_t* _InputKC)
+void add(std::                             map<int, std::string> *_InputMap, std::string _InputWord, size_t* _InputKC)
 {
     ++*(_InputKC);
     _InputMap->insert(std::pair<int, std::string>(*(_InputKC), _InputWord));

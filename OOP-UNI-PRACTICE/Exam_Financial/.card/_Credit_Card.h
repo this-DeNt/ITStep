@@ -1,13 +1,22 @@
 #pragma once
 
-#define LAPTOP 1
+#include "../.framework/examframework.h"
+#include "_Card.h"
 
-#ifdef LAPTOP
+class Credit: public Card {
 
-#include "C:\Uni-Prog-Lap\OOP-UNI-PRACTICE\Exam_Financial\.framework\examframework.h"
+    private:
 
-#else
+        double _credLim;
+        double _credScore;
+        double _credAmount;
 
-#include "D:\UniProg\OOP-UNI-PRACTICE\Exam_Financial\.framework\examframework.h"
+    public:
 
-#endif
+        Credit(long long _InputNum, u_short _InputCVV, ExpDate _InputExp, std::string _InputBank, std::string _InputManu, double _InputAmount, double _InputCredLim, double _InputCredScore, double _InputCredAmount);
+        void print(void) const;
+
+        double getCredLim();
+        double getCredScore();
+        double getCredAmount();
+};

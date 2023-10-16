@@ -103,8 +103,8 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "set": "cpp",
-    "cstdarg": "cpp",
-    "map": "cpp"
+    "list": "cpp",
+    "map": "cpp",
+    "set": "cpp"
   }
 }
