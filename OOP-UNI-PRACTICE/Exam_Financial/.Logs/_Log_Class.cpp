@@ -101,15 +101,8 @@ void Logs::getDayRate(u_short _InputDay)
 
     std::cout << "Top 3 by the " << _InputDay << std::endl;
 
-    for (auto i = 0, j = 0; i < _logs.size() || j < 3;i++) {
-
-        std::cout << "===" << i + 1 << "===" << std::endl;
-
-        if (_logs[i]->getDate()._day == _InputDay) {
-
-            _logs[i]->print();
-            j++;
-        }
+    for (auto i = _logs.begin(); i != _logs.end(); i++) {
+        
     }
 }
 

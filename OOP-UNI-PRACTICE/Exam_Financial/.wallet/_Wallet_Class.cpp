@@ -6,6 +6,7 @@ void Wallet::print()
 
         std::cout << "Card " << i + 1 << std::endl;
         _wallet[i]->print();
+        std::cout << "=========" << std::endl;
     }
 }
 
