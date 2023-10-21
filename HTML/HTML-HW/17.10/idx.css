@@ -1,0 +1,24 @@
+.parDiv {
+
+    height: 50px;
+    width: 100%;
+
+}
+
+.parTitle {
+
+    font-size: x-large; 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+
+.textBlock {
+
+    font-size: large;
+    font-weight: 500;
+    text-align: center;
+    color: burlywood;
+    font-family: monospace;
+}
