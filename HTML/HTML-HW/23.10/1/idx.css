@@ -1,0 +1,40 @@
+h1 {
+
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+h2 {
+
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+ul {
+
+    color: green;
+    font-family: monospace;
+    font-size: large;
+    list-style: decimal;
+}
+
+ul li ul {
+
+    color:black;
+    list-style-type: circle;
+}
+
+p {
+
+    font-size: x-large;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+span {
+
+    color: red;
+}
