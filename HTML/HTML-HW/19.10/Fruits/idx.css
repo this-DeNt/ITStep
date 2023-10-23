@@ -1,36 +1,31 @@
-.fruitslist {
+.fruits-div {
 
-    width: 800px;
-    height: 500px;
-    margin: 50px;
-    padding: 50px;
+    width: 50%;
     background-color: pink;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    padding: 10px;
 }
 
-.list {
-
-    width: 700px;
-    height: 50px;
-    margin: 10px;
-    padding: 0px;
-    padding-left: 50px;
-    background-color: red;
-}
-
-.listItem {
-
-    width: 100px;
-    height: 50px;
-    font-size: larger;
-    text-align: center;
-    background-color: darkred;
-    color: whitesmoke;
-    list-style-type:decimal;
-    font-family: 'Courier New', Courier, monospace;
+.list{
+    
+    list-style-type: decimal;
     font-weight: bold;
-    justify-content: center;
+    font-family: monospace;
+    font-size: large;
+    padding: 15px;
+}
 
+.list-item {
+
+    background-color: red;
+    width: auto;
+    margin: 7px;
+    padding: 15px;
+}
+
+.item {
+
+    background-color: darkred;
+    background-size: contain;
+    padding: 15px;
+    color: whitesmoke;
 }
