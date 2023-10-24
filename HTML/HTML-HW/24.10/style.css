@@ -1,0 +1,124 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+
+    text-align: left;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: monospace;
+    color: black;
+}
+
+h2 {
+
+    text-align: left;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: monospace;
+    color: black;
+}
+
+h3 {
+
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+    font-family: monospace;
+    color: black;
+}
+
+ol {
+
+    margin: 15px;
+}
+
+ol>li {
+
+    list-style-type: disc;
+    padding-left: 40px;
+    padding-top: 10px;
+    list-style-position: inside;
+    font-size: larger;
+    font-family: monospace;
+    font-style: normal;
+}
+
+body {
+
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.container {
+
+    margin: 15px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+}
+
+.contents-cont {
+
+    width: 500px;
+    height: auto;
+    background-color: rgba(128, 128, 128, 0.2);
+    padding: 10px;
+    margin-left: 15px;
+    border-color: black;
+    border-style: ridge;
+}
+
+ul {
+
+    font-size: large;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+ul>li {
+
+    font-size: medium;
+    font-family: monospace;
+    font-style: normal;
+    text-align: left;
+}
+
+ul>li>ul>li {
+
+    font-size: medium;
+    font-family: monospace;
+    font-style: normal;
+    padding-left: 20px;
+}
+
+span {
+
+    font-size: small;
+    color: grey;
+    font-family: monospace;
+    text-align: left;
+}
+
+p {
+
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: large;
+}
+
+a:visited {
+
+    color: blue;
+}
+
+a:any-link {
+
+    color: blue;
+    text-decoration: none;
+}
