@@ -1,0 +1,31 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    background-color: rgba(153, 2, 153, 0.7);
+    padding: 15px;
+    width: 50%;
+    height: auto;
+}
+
+p {
+
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: monospace;
+    color: rgb(221, 211, 211);
+    text-align: center;
+}
+
+body {
+
+    background-image: url(../24.10/.imgs/synth_bg.jpg);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
