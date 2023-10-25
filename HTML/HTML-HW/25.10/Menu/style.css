@@ -1,0 +1,25 @@
+body {
+
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+ul li {
+
+    list-style-position: inside;
+    background-color: grey;
+    padding: 10px;
+
+
+    font-size: xx-large;
+    font-weight: bold;
+    color: whitesmoke;
+    font-family: monospace;
+}
+
+ul li:hover {
+
+    background-color: darkgrey;
+}
