@@ -1,0 +1,35 @@
+
+ul {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+ul li{
+
+    float: left;
+    width: 128px;
+    height: 128px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+}
+
+#container {
+
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+}
+
+p {
+
+    font-size: xx-large;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+}
