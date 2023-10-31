@@ -1,0 +1,27 @@
+table {
+
+    border: 1px solid black;
+    width: 900px;
+    height: 900px;
+}
+
+table tbody tr {
+
+    width: 900px;
+    height: 90px;
+    border: 1px solid black;
+}
+
+table tbody tr td {
+
+    width: 90px;
+    height: 90px;
+    border: 1px solid black;
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
