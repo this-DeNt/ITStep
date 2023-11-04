@@ -1,0 +1,42 @@
+body {
+
+    margin: 0%;
+    padding: 0%;
+    background-color: rgba(0, 0, 0, 0.6);
+    float: left;
+}
+
+#iframe-container {
+
+    box-sizing: border-box;
+    width: 50%;
+    height: 80%;
+    margin: 1.25%;
+    float: left;
+    position: absolute;
+}
+
+#sale-container {
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-content: center;
+    justify-content: left;
+}
+
+#sale {
+
+    font-size: xx-large;
+    font-family: monospace;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: red;
+    padding-left: 10%;
+    border-radius: 20%;
+    text-align: center;
+    background-size: contain;
+}
