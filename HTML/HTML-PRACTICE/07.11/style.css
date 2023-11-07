@@ -1,0 +1,131 @@
+* {
+
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: sans-serifA;
+    src: url(AmazonEmber_Lt.ttf);
+}
+
+body {
+
+    margin: 0%;
+    padding: 0%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow:column;
+}
+
+#header-amazon {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 80%;
+    height: auto;
+}
+
+div#header-amazon img{
+
+    flex: 0 0 59px;
+    height: 59px;
+}
+
+#container {
+
+    width: 40%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form-container {
+
+    height: 665px;
+    width: 350px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 1%;
+    padding: 2.5%;
+
+}
+
+#create-container {
+
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+div#create-container span {
+
+    font-family: sans-serifA;
+    color: black;
+    font-weight: 600;
+    font-size: xx-large;
+}
+
+#inputs {
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 3.5%;
+}
+
+div#inputs form {
+
+    width: 100%;
+}
+
+div#inputs form label {
+
+    font-family: sans-serifA;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+}
+
+div#inputs form input {
+
+
+    width: 100%;
+    border: 1px solid rgba(35, 37, 39, 0.2);
+    height: 30px;
+    border-radius: 3.5%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#continue-button {
+
+    width: 100%;
+    background-color: yellow;
+    height: 40px;
+    border: 10px solid yellow;
+    border-radius: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.under-text {
+
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+}
+
+div.under-text span {
+
+    font-size: small;
+    font-family: sans-serifA;
+}
