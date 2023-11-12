@@ -1,0 +1,218 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body 
+{
+    margin: 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 500;
+}
+
+
+.container 
+{
+    max-width: 80%;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.row {
+ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.box2 
+{
+    flex: 0 0 30%;
+    padding-left: 20px;
+}
+.box2 p
+{
+   padding-bottom: 10px; 
+   
+   
+}
+
+.box3 { flex: 0 0 30%; }
+
+.box4 { 
+    flex: 0 0 20%; 
+    padding: 15px;
+
+}
+
+
+
+.img-fluid 
+{
+    max-width: 100%;
+    height: 100%;
+}
+.img-border 
+{ 
+    border: 4px solid rgba(255, 127, 36, 0.345);
+    transition: .5s;
+}
+
+.tab:hover .img-border,.testimonial:hover .img-border,.img-border:hover {
+    border-color: rgb(255, 127, 36);
+}
+.btn 
+{
+	display: inline-block;
+	height: 38px;
+	padding: 0 30px;
+	color: #fff;
+	text-align: center;
+	line-height: 38px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+    text-decoration: none;
+	background: #844c0f;
+	cursor: pointer;
+    transition: .5s;
+}
+.btn:hover 
+{
+	background: #f8c884;
+	text-decoration: none;
+}
+
+.portfolio-item
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid transparent;
+}
+
+.portfolio-item img 
+{
+    display: block;
+    border: 4px solid #ff7300a7;
+    transition: 400ms ease-out;
+}
+
+.portfolio-item:hover 
+{
+    border-color: #ff7b3e;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.38);
+}
+
+.portfolio-item:hover img { transform: scale(1.15); }
+
+.portfolio-item::after 
+{
+    content: attr(data-descr);
+    display: block;
+    position: absolute;
+    left: 0;
+    top:100%;
+    width: 100%;
+    padding: 20% 15px;
+    background-color: rgba(255, 121, 43, 0.86);
+    text-align: center;
+    font-size: 1.5rem;
+    transition: 500ms ease-out 200ms;
+    pointer-events: none;
+}
+.portfolio-item:hover::after{ top: 20%; }
+
+
+.full-container{
+    /*устанавливаем основную ширину равной ширине видимой части окна браузера*/
+    width: 100vw;
+    /*устанавливаем минимальную ширину, до которой можно сжимать контейнер, если ширина устройства будет меньше - появится горизонтальный скролл*/
+    min-width: 320px;
+    /*устанавливаем максимальную ширину, до которой можно расширять контейнер, если ширина устройства будет больше - по бокам появятся отступы*/
+    max-width: 100%;
+    /*для того, чтобы контейнер находился всегда по центру по горизонтали указываем значения для внешних отступов*/
+    margin: auto;
+    /*в случае, если контента будет мало, чтобы страница полностью заполнила всю высоту окна браузера, устанавливаем минимальную высоту*/
+    min-height: 100vh;
+    /*в случае, если контента будет много, чтобы появился вертикальный скролл, устанавливаем значение высоты равной содержимому*/
+    height: auto;
+    /*для более простого расположения элементов на странице, воспользуемся технологией flexBox*/
+    display: flex;
+    /*направление основной оси меняем на вертикальное*/
+    flex-direction: column;
+
+    background-color: rgb(73, 60, 52)
+
+}
+
+
+.main-nav {
+    /* position: fixed; */
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(106, 75, 56);
+    margin-bottom: 20px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+ul {
+    list-style: none;
+    display: flex;
+    float: right;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5%;
+}
+
+ul li {
+    margin-left: 40px;
+}
+
+ul a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav ul a:hover 
+{
+    color: #ff8e43;
+    background-color: #342f29ac;
+    border-radius: 10%;
+}
+
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    width: 30px;
+}
