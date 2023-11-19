@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
         <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="../imgs/YouTube-favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../imgs/YouTube-Favicon-ICO.ico">
 
     </head>
     <body>
@@ -27,16 +27,22 @@
         <!-- Body -->
         <div id="container" >
             <!-- Header -->
+            <div class="loader">
+                <div class="loader-bar"></div>
+            </div>
             <header>
                 <div id="header-content">
-                    <div id="header-burger"><i class="material-icons">menu</i></div>
+                    <div id="header-burger">
+                        <i class="fa fa-bars" aria-hidden="true" style="color: #c6c6c6c6;"></i>
+                    </div>
                     <div id="logo-cont">
                         <div id="logo">
-                            <img src="../imgs/YouTube-favicon copy.png" alt="logo">
+                            <img src="../imgs/Youtube-Logo-PNG.png" alt="logo">
                         </div>
-                        <div id="logo-text">
-                            YouTube
-                        </div>
+                        <div style="width: 0.9em; height: inherit; display: flex; align-items: start; justify-content: end; padding-top: 5%;"><sup style="color: #c6c6c6; font-family: YouTube-Sans-Light; font-size: 0.85em;">UA</sup></div>
+                    </div>
+                    <div id="search-bar-cont">
+                        <input type="text" placeholder="Введите запрос">
                     </div>
                 </div>
             </header>
@@ -71,5 +77,14 @@
         <!-- Materialize JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/24421da69c.js" crossorigin="anonymous"></script>
+        <!-- Loading -->
+        <script>
+            $(window).on("load", function() {
+                $(".loader").fadeOut(1);
+            });
+        </script>
     </body>
 </html>

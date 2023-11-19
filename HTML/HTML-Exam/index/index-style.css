@@ -6,7 +6,7 @@
 }
 
 @font-face {
-    font-family: YouTube-Sans-Bold;
+    font-family: YouTubeSansBold;
     src: url(../fonts/youtube-sans-bold.ttf);
 }
 
@@ -121,55 +121,140 @@ main {
 
     width: 2em;
     height: 2em;
-    margin-right: 0.5%;
+    margin-right: 0.3%;
+    margin-left: 0.5%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0%;
+
     text-align: center;
     color: whitesmoke;
 
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 #logo-cont {
 
-    width: 12em;
-    height: 2em;
+    width: 7.5em;
+    height: 1.4em;
     display: flex;
     align-items: center;
     
     flex-direction: row;
-    margin-left: 0.5%;
+    margin-left: 0.8%;
+    margin-top: 0.2%;
+
+    justify-self: start;
+
+    flex-shrink: 0%;
 }
 
 #logo {
 
-    width: 2em;
-    height: inherit;
+    width: 6.6em;
+    height: 1.4em;
+    display: flex;
+    align-items: end;
+    justify-content: center;
 
-    margin-right: 0.5%;
+    margin-right: 4.5%;
+
+    flex-shrink: 0%;
 }
 
-#logo-text {
+.loader-bar {
 
-    width: 8em;
     height: inherit;
-    margin-left: 0.5%;
 
-    display: flex;
-    align-items: center;
-    justify-content: start;
+    background-color: red;
+    animation: loader 1s ease;
+}
 
-    font-family: Noto Sans;
-    color: whitesmoke;
+.loader {
 
-    font-size: 2em;
+    width: 0%;
+    height: 0.1em;
+
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 div#logo img {
 
     width: inherit;
     height: inherit;
+}
+
+@keyframes loader {
+    
+    0% {
+
+        width: 0%;
+    }
+    25% {
+
+        width: 20%;
+    }
+    50% {
+
+        width: 60%;
+    }
+    75% {
+
+        width: 80%;
+    }
+    90% {
+        width: 100%;
+    }
+    100% {
+
+        width: 0%;
+    }
+}
+
+div#header-burger:hover {
+
+    background-color: #272727;
+    border-radius: 50%;
+}
+
+#search-bar-cont {
+
+    width: 32%;
+    height: 2.7em;
+
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    
+    flex-wrap: nowrap;
+    margin-left: 21.5%;
+
+    overflow: hidden;
+}
+
+#search-bar-cont input[type=text] {
+
+    width: 80%;
+    height: inherit;
+
+    border: 1px solid #303030;
+
+    border-radius: 20px;
+    color: #808080;
+    padding-left: 2.5%;
+    font-size: 1.2em;
+
+}
+
+#search-bar-cont input[type=text]::placeholder {
+
+    opacity: 1;
+    font-family: "YouTubeSansBold";
+
+    text-decoration: none;
 }
