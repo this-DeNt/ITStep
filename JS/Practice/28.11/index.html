@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var number = prompt("Введите число от 1 до 1000:");
+        var count = 0;
+        while (count < number) {
+        alert("#");
+        count++;
+        }
+        var number = prompt("Введите число от 1 до 1000:");
+        while (number >= 0) {
+        alert(number);
+        number--;
+        }
+        var base = prompt("Введите число от 1 до 1000:");
+        var power = prompt("Введите степень от 1 до 1000:");
+        var result = Math.pow(base, power);
+        alert("Результат: " + result);
+        var num1 = prompt("Введите первое число от 1 до 1000:");
+        var num2 = prompt("Введите второе число от 1 до 1000:");
+        var i;
+        var commonDivisors = [];
+        for (i = 1; i <= num1 || i <= num2; i++) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            commonDivisors.push(i);
+        }
+        }
+        alert("Общие делители: " + commonDivisors.join(", "));
+        var number = prompt("Введите число от 1 до 1000:");
+        var factorial = 1;
+        var i;
+        for (i = 1; i <= number; i++) {
+        factorial *= i;
+        }
+        alert("Факториал: " + factorial);
+        var divisor = prompt("Введите число от 1 до 100:");
+        var i;
+        for (i = 1; i <= 100; i++) {
+        if (i % divisor === 0) {
+            alert(i);
+        }
+        }
+        var start = prompt("Введите минимальное значение диапазона от 1 до 1000:");
+        var end = prompt("Введите максимальное значение диапазона от 1 до 1000:");
+        var i;
+        for (i = start; i <= end; i++) {
+        if (i % 4 === 0) {
+            alert(i);
+        }
+        }
+        var number = prompt("Введите число от 1 до 1000:");
+        var isPrime = true;
+        var i;
+        for (i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            isPrime = false;
+            break;
+        }
+        }
+        if (isPrime) {
+        alert("Число простое");
+        } else {
+        alert("Число составное");
+        }
+    </script>
+</body>
+</html>

@@ -230,6 +230,8 @@ div#header-burger:hover {
     display: flex;
     flex-direction: row;
     justify-self: center;
+    border: 1px solid #303030;
+    border-radius: 20px;
     
     flex-wrap: nowrap;
     margin-left: 21.5%;
@@ -239,22 +241,77 @@ div#header-burger:hover {
 
 #search-bar-cont input[type=text] {
 
-    width: 80%;
+    width: 89%;
     height: inherit;
 
-    border: 1px solid #303030;
+    border-right: 1px solid #303030;
 
-    border-radius: 20px;
     color: #808080;
-    padding-left: 2.5%;
     font-size: 1.2em;
 
+    display: flex;
+    align-items: center;
 }
 
 #search-bar-cont input[type=text]::placeholder {
 
     opacity: 1;
-    font-family: "YouTubeSansBold";
+    color:#808080;
+    font-weight: 400;
+    font-size: 0.9em;
+
+    margin-bottom: 20%;
 
     text-decoration: none;
 }
+
+#search-button {
+
+    width: 11%;
+    height: inherit;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-preview-container {
+
+    height: 10em;
+    
+    flex-basis: 20em;
+    flex-shrink: 10em;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.preview {
+
+    flex-basis: inherit;
+    flex-shrink: inherit;
+    height: 9em;
+}
+
+div.preview img {
+
+    flex-shrink: inherit;
+    flex-basis: inherit;
+    height: inherit;
+}
+
+.title-container {
+
+    flex-basis: inherit;
+    flex-shrink: inherit;
+    height: 1em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: center;
+}
+
