@@ -1,0 +1,14 @@
+Создание узлов 
+
+document.createElement(*tag*) - создание тега
+document.createTextNode(*txt*) - создание текстового узла
+
+.before - перед указанным элементом
+.prepend - как первый дч элемент
+.append - как последний дч элемент
+.after - после указанного элемента
+
+node.remove() - удаление узла
+
+article.cloneNode(true) - если глубокое клонирование
+article.cloneNode(false) - если только тег
